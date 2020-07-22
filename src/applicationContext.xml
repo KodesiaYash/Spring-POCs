@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id = "New Delhi" class = "helloWorld.helloCity">
+        <constructor-arg type = "String" value = "New Delhi is being created" />
+        <constructor-arg type = "String" value = "New Delhi" />
+    </bean>
+    <bean id = "Bern" class = "helloWorld.helloCity">
+        <constructor-arg index = "0" value = "Bern is being created" />
+        <constructor-arg index = "1" value = "Bern" />
+    </bean>
+    <bean id = "Rome" class = "helloWorld.helloCity">
+        <constructor-arg name = "message" value = "Rome is being created" />
+        <constructor-arg name = "city" value = "Rome" />
+    </bean>
+    <bean id = "India" class = "helloWorld.helloCountry">
+        <constructor-arg index = "0" value = "India" />
+        <constructor-arg index = "1" ref = "New Delhi" />
+        <constructor-arg index = "2" value = "India is being created" />
+    </bean>
+    <bean id = "Italy" class = "helloWorld.helloCountry">
+        <constructor-arg index = "0" value = "Italy" />
+        <constructor-arg index = "1" ref = "Rome" />
+        <constructor-arg index = "2" value = "Rome is being created ( in milliseconds not even a day )" />
+    </bean>
+    <bean id = "Switzerland" class = "helloWorld.helloCountry">
+        <constructor-arg index = "0" value = "Switzerland" />
+        <constructor-arg index = "1" ref = "Bern" />
+        <constructor-arg index = "2" value = "Switzerland is being created" />
+    </bean>
+    <bean id = "World" class = "helloWorld.helloWorld" >
+    </bean>
+</beans>
